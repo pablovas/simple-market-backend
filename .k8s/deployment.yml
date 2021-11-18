@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-market-app-backend
+  namespace: kube-system
+  labels:
+    app: simple-market-app-backend
+    node: sanchezkubenode
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-market-app-backend
+  template:
+    metadata:
+      labels:
+        app: simple-market-app-backend
+    spec:
+      containers:
+        - name: simplemarket-backend
+          image: leopimentel/simple-market-backend:$COMMIT_SHA1
+          ports:
+            - containerPort: 3000
+              name: adonisjs
