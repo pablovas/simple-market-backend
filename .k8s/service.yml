@@ -7,10 +7,11 @@ metadata:
     app: simple-market-app-backend
     node: sanchezkubenode
 spec:
-  type: ClusterIP
   ports:
-    - port: 3000
-      targetPort: http
-      name: adonisjs
+  - name: "3033"
+    port: 3033
+    targetPort: 3000
   selector:
     app: simple-market-app-backend
+    name: adonisjs
+  type: NodePort
