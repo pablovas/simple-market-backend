@@ -15,6 +15,12 @@ mv ./kube/deployment.yml.out ./kube/deployment.yml
 
 echo "$KUBERNETES_CLUSTER_CERTIFICATE" | base64 --decode > cert.crt
 
+#testing variables and certificates
+echo $KUBERNETES_TOKEN
+cat cert.crt
+
+
+
 ./kubectl \
   --kubeconfig=/dev/null \
   --server=$KUBERNETES_SERVER \
