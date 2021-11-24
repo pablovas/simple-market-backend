@@ -10,7 +10,7 @@ spec:
   ports:
   - name: "3033"
     port: 3033
-    targetPort: 3000
+    localPort: 3000
   selector:
     app: simple-market-app-backend
     name: adonisjs
