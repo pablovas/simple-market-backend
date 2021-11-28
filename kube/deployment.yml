@@ -6,9 +6,8 @@ metadata:
   labels:
     app: simple-market-app-backend
     node: sanchezkubenode
-
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: simple-market-app-backend
@@ -18,8 +17,24 @@ spec:
         app: simple-market-app-backend
     spec:
       containers:
-        - name: simplemarket-backend
+        - name: simple-market-app-backend
           image: leopimentel/simple-market-backend:$COMMIT_SHA1
           ports:
             - containerPort: 3030
               name: adonis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-market-app-backend
+  namespace: kube-system
+  labels:
+    app: simple-market-app-backend
+    node: sanchezkubenode
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3030
+      targetPort: adonis
+  selector:
+    app: simple-market-app-backend
