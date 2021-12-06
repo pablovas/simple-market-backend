@@ -17,7 +17,28 @@
 const Route = use("Route");
 const Database = use("Database");
 
-Route.get("/", () => {
+Route.get("/exercise", () => {
+  return {
+    "popular": {
+      "velocidade_maxima": {"min": "180", "max": "200"}, 
+      "velocidade_minima": {"min": "110", "max": "130"}, 
+      "derrapagem": {"min": "3", "max": "4"}
+    },
+    "sport": {
+      "velocidade_maxima": {"min": "195", "max": "215"}, 
+      "velocidade_minima": {"min": "125", "max": "145"}, 
+      "derrapagem": {"min": "2", "max": "3"}
+    },
+    "supersport": {
+      "velocidade_maxima": {"min": "210", "max": "230"}, 
+      "velocidade_minima": {"min": "140", "max": "160"}, 
+      "derrapagem": {"min": "1", "max": "1.75"}
+    },
+    
+  };
+});
+
+Route.get("/aboutme", () => {
   return {
     greeting: "Hi! I guess it's better talk about me in a json, sup? :p",
     aboutMe: "I call myself an digital highlander, i past last years walking alone here and doing nasty tech stuff on my house",
