@@ -37,11 +37,7 @@ Route.get("/exercise", () => {
     
   };
 });
-Route.get("/olamundo", () => {
-  return {
-    ["ola mundo", "ola alpha edtech"],
-  };
-});
+
 
 Route.get("/aboutme", () => {
   return {
