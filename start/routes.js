@@ -17,6 +17,10 @@
 const Route = use("Route");
 const Database = use("Database");
 
+Route.get("/", async () => {
+  return "Hi welcome to AdonisJS";
+});
+
 Route.get("/exercise", () => {
   return {
     "popular": {
