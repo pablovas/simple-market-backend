@@ -30,7 +30,11 @@ class UserController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create({ request, response, view }) {}
+  async create({ request, response, view }) {
+    const body = request.only(["username", "email", "password"]);
+    console.log(body);
+    await use("Database").table("users").insert(body);
+  }
 
   /**
    * Create/save a new user.
@@ -43,9 +47,9 @@ class UserController {
    */
   async store({ request, response }) {
     // const { user, email, password } = request.body;
-    const body = request.only(["username", "email", "password"]);
-    console.log(body);
-    await use("Database").table("users").insert(body);
+    //const body = request.only(["username", "email", "password"]);
+    //console.log(body);
+    //await use("Database").table("users").insert(body);
   }
 
   /**

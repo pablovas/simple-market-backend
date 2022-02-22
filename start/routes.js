@@ -44,4 +44,4 @@ Route.get("/users", async () => {
   return await Database.table("users").select("*");
 });
 
-Route.post("/register/submit", "UserController.store");
+Route.post("/register/submit", "UserController.create");
