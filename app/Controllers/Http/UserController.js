@@ -1,3 +1,5 @@
+const Database = use('Database')
+
 "use strict";
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
