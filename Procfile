@@ -1,0 +1,1 @@
+adonisbackend: npm start
