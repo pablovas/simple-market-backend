@@ -45,12 +45,12 @@ class UserController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async store({ request, response }) {
+  //async store({ request, response }) {
     // const { user, email, password } = request.body;
     //const body = request.only(["username", "email", "password"]);
     //console.log(body);
     //await use("Database").table("users").insert(body);
-  }
+  //}
 
   /**
    * Display a single user.
