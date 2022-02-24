@@ -45,3 +45,7 @@ Route.get("/users", async () => {
 });
 
 Route.post("/register/submit", "UserController.create");
+
+Route.post("/login", async () => {
+  return await console.log(body);
+});
